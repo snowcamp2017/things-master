@@ -12,18 +12,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
 
 // add your service
-app.get('/sensors/k33g-sensor', (req, res) => {
+require('./k33g-service')(app)
 
-  fetch('http://snow-demo-k33g.cleverapps.io/sensors/k33g-sensor', {
-    method: 'GET',
-    headers: {
-      "Content-Type": "application/json",
-    }
-  })
-  .then(response => response.json())
-  .then(jsonData => res.send(jsonData));
-
-});
 
 app.get('/sensors/babs-sensor', (req, res) => {
 
