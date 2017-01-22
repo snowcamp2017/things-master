@@ -8,16 +8,13 @@
   <script>
     console.log("=== k33g service ===");
     getInformationService() {
-      fetch('http://snow-demo-k33g.cleverapps.io/sensors/k33g-sensor', {
-        method: 'GET', 
+      fetch('/sensors/k33g-sensor', {
+        method: 'GET',
         headers: {
           "Content-Type": "application/json",
         }
       })
-      .then(response => {
-        console.log(response)
-        return response.json()
-      })
+      .then(response => response.json())
       .then(jsonData => {
         this.id = jsonData.id;
         this.kind = jsonData.kind;
@@ -27,6 +24,8 @@
         this.update();
       });
     }
+    this.getInformationService();
+
     const timer = setInterval(this.getInformationService, 2000);
 
   </script>
