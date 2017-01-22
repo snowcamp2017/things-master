@@ -1,0 +1,31 @@
+<babs-service class="ui container segment" style="font-size:16px">
+
+  <h4 class="ui header">{id} | {kind}</h4>
+  <p>
+    <small class="ui blue label">value: {value} {unit}</small>
+  </p>
+
+  <script>
+    getInformationService() {
+      fetch('/sensors/babs-sensor', {
+        method: 'GET',
+        headers: {
+          "Content-Type": "application/json",
+        }
+      })
+      .then(response => response.json())
+      .then(jsonData => {
+        this.id = jsonData.id;
+        this.kind = jsonData.kind;
+        this.value = jsonData.value;
+        this.unit = jsonData.unit;
+
+        this.update();
+      });
+    }
+    this.getInformationService();
+
+    const timer = setInterval(this.getInformationService, 2000);
+
+  </script>
+</babs-service>
