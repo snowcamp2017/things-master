@@ -16,18 +16,8 @@ require('./k33g-service')(app)
 
 require('./babs-service')(app)
 
-app.get('/sensors/buster-sensor', (req, res) => {
+require('./buster-service')(app)
 
-  fetch('http://snow-demo-buster.cleverapps.io/sensors/buster-sensor', {
-    method: 'GET',
-    headers: {
-      "Content-Type": "application/json",
-    }
-  })
-  .then(response => response.json())
-  .then(jsonData => res.send(jsonData));
-
-});
 
 app.listen(port);
 console.log(`🌍 Web Application is started - listening on ${port}`);
