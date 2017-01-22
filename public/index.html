@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <title>SnowCamp 2017</title>
+
+  <link rel="stylesheet" href="/Semantic-UI-CSS/semantic.min.css" />
+
+</head>
+<body>
+  <!-- HEADER -->
+  <application-header></application-header>
+
+  <!-- CONTENT -->
+  <div class="ui container">
+    <padding-top></padding-top>
+    <application-content></application-content>
+  </div>
+
+
+  <!-- include the tag(s) -->
+  <script type="riot/tag" src="application-header.html"></script>
+  <script type="riot/tag" src="padding-top.html"></script>
+  <script type="riot/tag" src="application-content.html"></script>
+
+  <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="/Semantic-UI-CSS/semantic.min.js"></script>
+
+  <script type="text/javascript" src="/js/riot+compiler.min.js"></script>
+
+  <!-- mount the tag(s) -->
+  <script>
+    riot.mount('application-header')
+    riot.mount('padding-top')
+    riot.mount('application-content')
+  </script>
+
+</body>
+</html>
