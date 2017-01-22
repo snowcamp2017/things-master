@@ -19,6 +19,7 @@
   <div class="ui container">
     <padding-top></padding-top>
     <application-content></application-content>
+    <k33g-service></k33g-service>
   </div>
 
 
@@ -26,6 +27,10 @@
   <script type="riot/tag" src="application-header.html"></script>
   <script type="riot/tag" src="padding-top.html"></script>
   <script type="riot/tag" src="application-content.html"></script>
+
+  <!-- Add services components -->
+  <script type="riot/tag" src="k33g-service.html"></script>
+
 
   <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="/Semantic-UI-CSS/semantic.min.js"></script>
@@ -37,6 +42,10 @@
     riot.mount('application-header')
     riot.mount('padding-top')
     riot.mount('application-content')
+
+    // mount services tag
+    riot.mount('k33g-service')
+
   </script>
 
 </body>
