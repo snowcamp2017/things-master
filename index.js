@@ -12,6 +12,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
 
 // add your service
+
+console.log("loading services...")
+
 require('./k33g-service')(app)
 
 require('./babs-service')(app)
