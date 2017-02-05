@@ -21,6 +21,7 @@ require('./babs-service')(app)
 
 require('./buster-service')(app)
 
+require('./bob-service')(app)
 
 app.listen(port);
 console.log(`🌍 Web Application is started - listening on ${port}`);
